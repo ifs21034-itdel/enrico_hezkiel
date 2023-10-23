@@ -176,6 +176,7 @@ document.addEventListener("keydown", function (e) {
 
 //fungsi carousel
 let slideIndex = 0;
+const slideInterval = 2000;
 
 function showSlide(n) {
   const slides = document.querySelectorAll(".certificate");
@@ -199,8 +200,14 @@ function prevSlide() {
   showSlide(slideIndex);
 }
 
+function autoSlide() {
+  nextSlide();
+  setTimeout(autoSlide, slideInterval);
+}
+
 // Tampilkan slide pertama saat halaman dimuat
 showSlide(slideIndex);
+autoSlide();
 
 // Form Validation
 function validateForm() {
@@ -252,7 +259,7 @@ function validateForm() {
     const phonePattern = /^\+\d{2,3}\s\d{8,}$/;
 
     if (!phonePattern.test(phone)) {
-      phoneError.innerHTML = "Format nomor tidak valid!";
+      phoneError.innerHTML = "Format nomor tidak valid! Format: +(kode negara)[spasi](nomor selengkapnya)";
       status = false;
     }
   }
@@ -268,6 +275,9 @@ function validateForm() {
       title: "Sukses!",
       text: "Data berhasil terkirim!",
     });
+
+    //clear inputs
+  document.getElementById("myForm").reset();
   }
 
   if (!status) {
@@ -277,9 +287,6 @@ function validateForm() {
       text: "Data tidak valid",
     });
   }
-
-  //clear inputs
-  document.getElementById("myForm").reset();
 
   return false;
 }
