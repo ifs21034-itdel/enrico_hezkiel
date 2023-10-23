@@ -5,7 +5,7 @@
 
 body {
   font-family: monospace;
-  background: linear-gradient(#dafdba, #4caf50, #dafdba);
+  background: rgba(0, 85, 255, 0.237);
 }
 
 html {
@@ -552,7 +552,7 @@ article .icon {
 
 .color-container {
   border: #012030;
-  background: linear-gradient(135deg, green, rgb(250, 250, 250), green);
+  background: linear-gradient(135deg, rgb(250, 250, 250), grey);
 }
 
 .project-img {
@@ -634,8 +634,7 @@ article .icon {
 
 .certificate-img {
   border-radius: 2rem;
-  width: 90%;
-  height: 90%;
+  width: 75%;
 }
 
 .certificate-title {
@@ -658,16 +657,20 @@ article .icon {
   width: 100%;
   margin: 0 auto;
   padding: 2rem 0;
+  overflow: hidden;
 }
 
 .slider {
   transition: transform 0.3s ease-in-out;
+  display: flex;
 }
 
 .certificate {
   flex: 0 0 100%;
   padding: 1rem;
   text-align: center;
+  transition: transform 0.3s ease-in-out; /* Tambahkan transisi untuk slide */
+  transform: translateX(0); /* Awalnya, slide dalam posisi awal */
 }
 
 .certificate-img {
@@ -687,7 +690,7 @@ article .icon {
 
 .prev-btn,
 .next-btn {
-  background-color: #9aeba3;
+  background-color: grey;
   color: black;
   border: none;
   border-radius: 50%;
@@ -701,7 +704,7 @@ article .icon {
 
 .prev-btn:hover,
 .next-btn:hover {
-  background-color: #64ba14;
+  background-color: lightgray;
 }
 
 /* Channels Section */
@@ -709,8 +712,7 @@ article .icon {
   padding: 4vh 0;
   height: fit-content;
   border-radius: 10%;
-  background: radial-gradient(#9aeba3, darkgreen);
-  border: 0 2rem;
+  background: rgb(243, 240, 240);
 }
 
 #channels .section-container {
