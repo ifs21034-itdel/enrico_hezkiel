@@ -174,6 +174,8 @@ document.addEventListener("keydown", function (e) {
   }
 });
 
+//END OF MODAL SECTION
+
 //fungsi carousel
 let slideIndex = 0;
 const slideInterval = 2000;
@@ -208,6 +210,9 @@ function autoSlide() {
 // Tampilkan slide pertama saat halaman dimuat
 showSlide(slideIndex);
 autoSlide();
+
+// END OF CARAOUSEL SECTION
+//
 
 // Form Validation
 function validateForm() {
@@ -259,7 +264,8 @@ function validateForm() {
     const phonePattern = /^\+\d{2,3}\s\d{8,}$/;
 
     if (!phonePattern.test(phone)) {
-      phoneError.innerHTML = "Format nomor tidak valid! Format: +(kode negara)[spasi](nomor selengkapnya)";
+      phoneError.innerHTML =
+        "Format nomor tidak valid! Format: +(kode negara)[spasi](nomor selengkapnya)";
       status = false;
     }
   }
@@ -277,7 +283,7 @@ function validateForm() {
     });
 
     //clear inputs
-  document.getElementById("myForm").reset();
+    document.getElementById("myForm").reset();
   }
 
   if (!status) {
@@ -290,39 +296,4 @@ function validateForm() {
 
   return false;
 }
-
-// --
-// Ambil semua elemen progress
-const progressBars = document.querySelectorAll(".progress");
-
-// Fungsi untuk menjalankan ulang animasi
-function runAnimation() {
-  progressBars.forEach((progressBar) => {
-    const targetWidth = progressBar.getAttribute("data-percent");
-    progressBar.style.width = "0"; // Set lebar kembali ke 0
-
-    setTimeout(() => {
-      progressBar.style.width = targetWidth + "%"; // Set lebar sesuai dengan persentase
-    }, 100); // Menunggu sebentar sebelum memulai animasi
-  });
-}
-
-// Fungsi untuk menjalankan ulang animasi setelah animasi selesai
-function restartAnimation() {
-  progressBars.forEach((progressBar) => {
-    progressBar.style.width = "100%"; // Set lebar ke 100% saat selesai
-  });
-
-  setTimeout(() => {
-    progressBars.forEach((progressBar) => {
-      progressBar.style.width = "0"; // Set lebar kembali ke 0 setelah berhenti selama 1 detik
-    });
-  }, 1000); // Berhenti selama 1 detik
-
-  setTimeout(() => {
-    runAnimation(); // Setelah berhenti selama 1 detik, jalankan ulang animasi dari awal
-  }, 2000); // Jeda selama 2 detik sebelum memulai ulang animasi
-}
-
-// Jalankan ulang animasi untuk pertama kali
-runAnimation();
+// END OF FORM VALIDATION SECTION
