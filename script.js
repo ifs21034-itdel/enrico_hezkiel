@@ -178,7 +178,7 @@ document.addEventListener("keydown", function (e) {
 
 //fungsi carousel
 let slideIndex = 0;
-const slideInterval = 2000;
+const slideInterval = 3000;
 
 function showSlide(n) {
   const slides = document.querySelectorAll(".certificate");
